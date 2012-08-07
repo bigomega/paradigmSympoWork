@@ -21,19 +21,19 @@ document.getElementById('inp').value="";
 document.getElementById('inp').addEventListener("keypress",function(event){evalLine(event);},false);
 now=new Date();
 time="";
-if(now.getHours()<9)
+if(now.getHours()<10)
 	time="0";
 time+=now.getHours()+":";
-if(now.getMinutes()<9)
+if(now.getMinutes()<10)
 	time+="0";
 time+=now.getMinutes()+":";
-if(now.getSeconds()<9)
+if(now.getSeconds()<10)
 	time+="0";
 time+=now.getSeconds();
 	
 if(getCookie("log"))
 	document.getElementById('log').innerHTML=getCookie("log");
-document.getElementById('log').innerHTML+="Paradigm 2012 (Aug 31, 2012) @ ssn<br>Console started at "+time+" in "+navigator.appCodeName+" "+navigator.appVersion+"<br>Type 'help','copyright','bla'<br>";
+document.getElementById('log').innerHTML+="<br>Paradigm 2012 (Aug 31, 2012) @ ssn<br>Console started at "+time+" in "+navigator.appCodeName+" "+navigator.appVersion+"<br>Type 'help','copyright','bla'<br>";
 }
 
 submitReq=function(form){
@@ -70,6 +70,7 @@ res=function(){
 	upFlag=0;
 	currPos=stack.size-1;
 	log=document.getElementById('log').innerHTML;
+	log.slice(-2000);
     setCookie("log",log,365);}
 }
 
@@ -97,6 +98,7 @@ evalLine=function(event){
 			document.getElementById('inp').value=stack[currPos];
 		}
 	}
+	document.getElementById('inp').focus();
 }
 
 mfocus=function(){
@@ -146,9 +148,11 @@ register=function(){
 
 </script>
 </head>
-<div style="position:absolute;background:lightgrey;width:99%;height:98%;overflow:hidden;" onclick="mfocus()">
-<div style="position:relative;left:15px"><h3>Hackathon</h3><div id="log" style="float:top"></div>
+<body onclick="mfocus()">
+<div style="position:absolute;background:lightgrey;width:99%;height:98%;overflow:hidden;">
+<div style="position:relative;left:15px"><h3>Hackathon</h3><div id="log" style="float:top;overflow:hidden;"></div>
 <div><b>>>></b> <input type="text" id="inp" style="width:100%;position:relative;top:-20px;right:-40px;border:none;background:lightgrey"/></div>
 </div>
 </div>
+</body>
 </html>

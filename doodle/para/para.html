@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+div.bar_end_l
+{
+	position: absolute;
+//	border:1px solid black;
+	background: url('images/sprite.png') no-repeat scroll 0px -553px transparent;
+	height:57px;
+	width:13px;
+}
+div.bar_end_r
+{
+	position: absolute;
+	left:370px;
+//	border:1px solid black;
+	background: url('images/sprite.png') no-repeat scroll 0px -553px transparent;
+	height:57px;
+	width:13px;
+}
+div.mark
+{
+//	border:1px solid black;
+	position: absolute;
+	left:160px;
+	top:-3px;
+	background: url('images/sprite.png') no-repeat scroll -286px -553px transparent;
+	height:60px;
+	width:60px;
+	z-index:5;
+}
+div.strip
+{
+	position: relative;
+	float: left;
+	top:6px;
+//	border:1px solid black;
+	background: url('images/sprite.png') scroll -243px -553px transparent;
+	height:43px;
+	width:40px;
+}
+div.number1
+{
+	position: relative;
+	float:left;
+	top:6px;
+//	border:1px solid black;
+	background: url('images/sprite.png') no-repeat scroll -291px -275px transparent;
+	height:43px;
+	width:40px;
+//	z-index:4;
+}
+div.number0
+{
+	position: relative;
+	float:left;
+	top:7px;
+//	border:1px solid black;
+	background: url('images/sprite.png') no-repeat scroll -721px 0px transparent;
+	height:43px;
+	width:40px;
+//	z-index:4;
+}
+</style>
+
+<div id="bar" style="position:absolute;;">
+<!--
+z-index:
+5 : marker
+4 : numbers on strip // changed: the stip itself is changed in case of a number
+3 : strip
+2 : the strip holes
+-->
+<div class="bar_end_l"></div>
+<div class="bar_end_r"></div>
+<div class="mark"></div>
+
+<div id="linestrip" style="position:absolute;left:6px;height:49px;width:371px;overflow:hidden;z-index:3"><!--9x40=360(371) total. -->
+	<div style="position:absolute;left:-155px;display:inline;width:800px;height:49px;"><!-- size 4on either side, 4x40=160.to move on left:left-=40px right:left+=40px-->
+	<!--for numbers just change the class to number1 or number0-->
+	<div id="s1" class="strip"></div>
+	<div id="s2" class="strip"></div>
+	<div id="s3" class="strip"></div>
+	<div id="s4" class="strip"></div>
+	
+	<div id="s5" class="strip"></div>
+	<div id="s6" class="strip"></div>
+	<div id="s7" class="strip number1"></div>
+	<div id="s8" class="strip"></div>
+	<div id="s9" class="strip"></div><!--mid-->
+	<div id="s10" class="strip number0"></div>
+	<div id="s11" class="strip"></div>
+	<div id="s12" class="strip"></div>
+	<div id="s13" class="strip"></div>
+	
+	<div id="s14" class="strip"></div>
+	<div id="s15" class="strip"></div>
+	<div id="s16" class="strip"></div>
+	<div id="s17" class="strip"></div>
+	</div>
+</div>
+
+</div>
+<!--<div>
+	<div>asdasd</div>
+	<div style="position:inline">sdasdasd</div>
+</div>
+
+<img src="images/sprite.png" style="width:100px;height:100px">
+<a href="#" style="background: url('images/sprite.png') -243px -553px"></a>-->
+</html>
